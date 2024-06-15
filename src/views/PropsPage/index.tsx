@@ -6,15 +6,16 @@ interface IProps {
   age: number
   height: number
 }
+import { PropsPageWrapper } from './style'
 const PropsPage: React.FC<IProps> = (props) => {
   return (
-    <div>
-      <h1>PropsPage--PropsPage接收的信息如下：</h1>
+    <PropsPageWrapper>
+      <p>PropsPage</p>
       <p>姓名：{props.name}</p>
       <p>年龄：{props.age}</p>
       <p>身高：{props.height}</p>
       <div>{props.children}</div>
-    </div>
+    </PropsPageWrapper>
   )
 }
 

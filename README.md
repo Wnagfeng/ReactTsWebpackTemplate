@@ -1,4 +1,6 @@
-# React+Ts+Webpack项目模板
+
+
+<h1 align="center">Welcome to ReactTsWebpackTemplate 👋</h1>
 
 | 系统环境 |     版本     |
 | :------: | :----------: |
@@ -6,19 +8,6 @@
 |  React   | react@18.3.1 |
 |   Npm    |    8.19.4    |
 |          |              |
-
-## 项目配置包含
-
-- React
-- Typescript
-- Webpack
-- Less
-- Sass
-- ESLint
-- Prettier
-- Husky
-- Commitlint
-- Reduxjs/toolkit 
 
 ## 项目启动
 
@@ -30,6 +19,8 @@ npm run build --打包
 ```
 
 ## 项目所需代码片段
+
+快速生成Function Component
 
 ```json
 "ReactTypeScript": {
@@ -51,28 +42,45 @@ npm run build --打包
 }
 ```
 
+快速生成Css in Js 样式解决方案
+
+```json
+"ReactCss": {
+  "prefix": "rsc",
+  "body": [
+    "import styled from 'styled-components'",
+    "export const  ${1:XXXWrapper}= styled.div`",
+    "",
+    "`",
+    ""
+  ],
+  "description": "ReactCss"
+}
+```
+
 ## 项目详解
 
-- 如果你看想看看Loading组件 你可以将network网络调为3G 然后刷新页面 你会看到Loading组件的效果
+- 对于Action的处理：
 
-- 如果你是专业的React开发者，你在Store中的index中你应该就知道怎么使用Redux了，如果你不是 建议你在使用Redux的时候 先看看PageA示例
+  我们将所有的异步Action统一使用createAsyncThunk(详见PageA)
 
-  ```tsx
-  import { useAppSelector } from '@/store/index'
-  const PageA: FC<IProps> = (props) => {
-    const { count, message } = useAppSelector((state) => {
-      return {
-        count: state.counter.count,
-        message: state.counter.message
-      }
-    }, shallowEqual)
-    return (
-      <div>
-        PageA{count},{message}
-      </div>
-    )
-  }
+  ```react
+  export const FetchChangePersonlist = createAsyncThunk(
+    'counter/fetchChangePersonlist',
+    (payload, { dispatch }) => {
+      // 在这里发起请求，获取数据
+      // getxxx().then((res) => {
+      //   dispatch(xxxxAction(res.data))
+      // })
+      setInterval(() => {
+        dispatch(
+          changepersonlistAction([
+            { id: 1, name: '张三', age: 25 },
+            { id: 3, name: '王五', age: 28 }
+          ])
+        )
+      }, 1000)
+    }
+  )
   ```
-
-  
 
