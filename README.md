@@ -1,5 +1,5 @@
 
-<div  class="box"  style="    display: flex;    justify-content: center;    align-items: center;    flex-direction: column; ">  <h1 align="center">Welcome to VuecomponentLibs 👋</h1> 
+<div  class="box"  style="    display: flex;    justify-content: center;    align-items: center;    flex-direction: column; ">  <h1 align="center">Welcome to ReactTsWebpackTemplate 👋</h1> 
      <h2 align="center"> 一款开箱即用的React+Ts+Webpack开发模板  😀</h2> 
      <h2 align="center"> CoderJoon  🐂</h2> 
 
